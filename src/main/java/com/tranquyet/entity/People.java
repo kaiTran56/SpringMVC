@@ -5,10 +5,8 @@ public class People {
 	private String address;
 	private int age;
 
-	public People(String name, String address, int age) {
-		this.name = name;
-		this.address = address;
-		this.age = age;
+	public People() {
+		
 	}
 
 	public void setName(String name) {
