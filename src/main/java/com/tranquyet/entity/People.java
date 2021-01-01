@@ -6,7 +6,7 @@ public class People {
 	private int age;
 
 	public People() {
-		
+
 	}
 
 	public void setName(String name) {
@@ -33,7 +33,15 @@ public class People {
 		return this.age;
 	}
 
-	public void setTest() {
-		System.out.println("Hello World!");
+	public String setTest() {
+		return "Hello World!" + address;
+	}
+
+	public void Start() {
+		System.out.println("Hello Init");
+	}
+
+	public void End() {
+		System.out.println("Hello End");
 	}
 }

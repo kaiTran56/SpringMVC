@@ -15,23 +15,28 @@ public class HomepageController {
 
 	public String showHomepage() {
 
-		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
 		People people = (People) context.getBean("people");
 		people.setTest();
-
+		((ClassPathXmlApplicationContext) context).close();
 		return "homepage";
 	}
 
 	@RequestMapping("/login")
 	@ResponseBody
 	public String login() {
-		return "Hello, welcome to Login";
+		ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
+		People people = (People) context.getBean("people");
+		((ClassPathXmlApplicationContext) context).close();
+		return people.setTest();
 	}
 
 	@RequestMapping("/homepage")
 	@ResponseBody
 	public String greeting() {
-		return "Hello World, I'm Kai, Welcome to the New World!";
+		ApplicationContext context = new ClassPathXmlApplicationContext("IoC.xml");
+		People people = (People) context.getBean("people");
+		((ClassPathXmlApplicationContext) context).close();
+		return people.setTest();
 	}
 }
