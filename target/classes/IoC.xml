@@ -17,4 +17,29 @@
 		<property name="address" value="Hanu" />
 	</bean>
 
+
+	<bean id="student" class="com.tranquyet.entity.Student"
+		factory-method="getCreateStudent"></bean>
+
+	<bean id="student_temp" class="com.tranquyet.entity.Student" />
+	<bean id="student1" factory-bean="student_temp"
+		factory-method="getCreateStudentIoC"></bean>
+
+
+	<!-- embed the values to contructors -->
+
+	<bean id="people-temp" class="com.tranquyet.entity.People">
+		<constructor-arg value="Quyet" />
+		<constructor-arg value="Hanu" />
+		<constructor-arg value="20" />
+	</bean>
+
+	<!-- embed the object to contructores -->
+
+	<bean id="teacher" class="com.tranquyet.entity.Teacher">
+		<constructor-arg value="Director" />
+		<constructor-arg ref="people-temp" />
+	</bean>
+
+
 </beans>

@@ -9,6 +9,12 @@ public class People {
 
 	}
 
+	public People(String name, String address, int age) {
+		this.name = name;
+		this.address = address;
+		this.age = age;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -43,5 +49,9 @@ public class People {
 
 	public void End() {
 		System.out.println("Hello End");
+	}
+
+	public String toString() {
+		return "Hey, " + name + " " + address + " " + age;
 	}
 }
